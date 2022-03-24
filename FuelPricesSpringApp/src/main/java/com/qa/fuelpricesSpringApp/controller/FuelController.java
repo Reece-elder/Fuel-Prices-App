@@ -2,6 +2,7 @@ package com.qa.fuelpricesSpringApp.controller;
 
 import java.util.List;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,10 +20,9 @@ import com.qa.fuelpricesSpringApp.services.ServiceDB;
 // If you have multiple classes with annotation @RestController, Spring will use the first one it finds
 
 @RestController
-
-public class Controller {
+public class FuelController {
 	// Not using the arrayList in the controller anymore!!!
-//		private ArrayList<HolidayBooking> bookingList = new ArrayList<>(); 
+//		private ArrayList<FuelPrices> bookingList = new ArrayList<>(); 
 		
 		// Response Entities offer more info when sending a response back
 		// Response includes a message AND a status code we can specify AND the data it requested
@@ -34,11 +34,11 @@ public class Controller {
 		// When Spring creates our Controller, it passes in the Service object
 		private ServiceDB service;
 		
-		public Controller(ServiceDB service) {
+		public FuelController(ServiceDB service) {
 			super();
 			this.service = service;
 		}
-		@PostMapping("/create")
+		@PostMapping("/createPrices")
 		public ResponseEntity<String> createPrices(@RequestBody FuelPrices price) {
 			
 			// run the method in the Services class, passing in the object recieved via HTTP Request
@@ -67,7 +67,7 @@ public class Controller {
 			List<FuelPrices> response = service.getPrices();
 			
 			// Either one of these returns will work in the same way
-			// ResponseEntity<ArrayList<HolidayBooking>> response = new ResponseEntity<>(price List, HttpStatus.ACCEPTED);
+			// ResponseEntity<ArrayList<FuelPrices>> response = new ResponseEntity<>(price List, HttpStatus.ACCEPTED);
 			// return response;
 			
 			return new ResponseEntity<>(response, HttpStatus.ACCEPTED);

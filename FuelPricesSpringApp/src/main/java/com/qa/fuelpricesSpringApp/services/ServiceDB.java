@@ -1,8 +1,7 @@
 package com.qa.fuelpricesSpringApp.services;
+
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.qa.fuelpricesSpringApp.model.FuelPrices;
 import com.qa.fuelpricesSpringApp.repo.Repo;
 
@@ -55,8 +54,8 @@ public FuelPrices getById(long id) {
 			
 	// Update the properties of this object 
 	// running the setProperty method of the old price, replacing with entries for new price
-		oldPrice.setManager_name(price.getManager_name());
-		oldPrice.setCompetitor_name(price.getCompetitor_name());
+		oldPrice.setManagerName(price.getManagerName());
+		oldPrice.setCompetitorName(price.getCompetitorName());
 		oldPrice.setLocation(price.getLocation());
 		oldPrice.setFueltype(price.getFueltype());
 		oldPrice.setPrice(price.getPrice());
