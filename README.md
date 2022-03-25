@@ -19,8 +19,13 @@ Screenshots showing your postman requests and the output from the API.
 Screenshots of your database to prove that data is being persisted.
  <img width="500" alt="image" src="https://user-images.githubusercontent.com/97037646/160145254-2c4232cc-bcc4-4fc0-a16b-4bf0c2bae5da.png">
 Screenshot of your test results, including coverage report.
-<img width="500" alt="image" src=" ![image](https://user-images.githubusercontent.com/97037646/160145599-84fe3ddf-6cdf-4357-bc15-0b430c6046d7.png)
+<img width="500" alt="image" src="(https://user-images.githubusercontent.com/97037646/160145599-84fe3ddf-6cdf-4357-bc15-0b430c6046d7.png">
 
 Link to Jira Board - You must add your trainer(s) as collaborators also. 
-https://taliawat.atlassian.net/jira/software/projects/SDFP/issues/SDFP-6?filter=myopenissues                                
+https://taliawat.atlassian.net/jira/software/projects/SDFP/issues/SDFP-6?filter=myopenissues 
+
+Risk Assessment
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97037646/160150214-bb3a8031-bbd6-4275-b5fb-a868c3b17ac7.png">                          
+                                  
+                                  
                                   
