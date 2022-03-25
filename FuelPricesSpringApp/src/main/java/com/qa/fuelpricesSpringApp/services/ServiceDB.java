@@ -1,6 +1,7 @@
 package com.qa.fuelpricesSpringApp.services;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 import com.qa.fuelpricesSpringApp.model.FuelPrices;
 import com.qa.fuelpricesSpringApp.repo.Repo;
@@ -35,39 +36,39 @@ public FuelPrices getById(long id) {
 }
 //Returns all the objects as a List
 	public List<FuelPrices> getPrices() {
-		return repo.findAll();
+		List<FuelPrices> FuelPrices = repo.findAll();
+		return FuelPrices;
 	}
 	public boolean remove(long id) {
-		repo.deleteById(id);
-		return true;
+		this.repo.deleteById(id);
+		return !this.repo.existsById(id);
 	}
 	
-	public boolean deleteAll() {
-		repo.deleteAll();
-		return true;
+	public FuelPrices delete(Long id) {
+		Optional<FuelPrices> toDelete = this.repo.findById(id);
+		this.repo.deleteById(id);
+		return toDelete.orElse(null);
 	}
+	
 	// Update takes in an ID and a request body
-		public boolean update(long id, FuelPrices price) {
+		public FuelPrices update(long id, FuelPrices price) {
 			
 	// Find the object we want to update 
-		FuelPrices oldPrice = getById(id);
+			Optional<FuelPrices> optPrice =  this.repo.findById(id);
+			FuelPrices updatedPrice = optPrice.get();
+			updatedPrice.setManagerName(price.getManagerName());
+			updatedPrice.setCompetitorName(price.getCompetitorName());
+			updatedPrice.setLocation(price.getLocation());
+			updatedPrice.setFueltype(price.getFueltype());
+			updatedPrice.setPrice(price.getPrice());
+			return this.repo.save(updatedPrice);
 			
-	// Update the properties of this object 
-	// running the setProperty method of the old price, replacing with entries for new price
-		oldPrice.setManagerName(price.getManagerName());
-		oldPrice.setCompetitorName(price.getCompetitorName());
-		oldPrice.setLocation(price.getLocation());
-		oldPrice.setFueltype(price.getFueltype());
-		oldPrice.setPrice(price.getPrice());
-			
-	// Creating a new price with the value of old price
-	    FuelPrices updatedPrice = oldPrice;
-			
-			// Saving this old Booking into the DB
-			repo.save(updatedPrice);
-			
+		}
+
+		public boolean deleteAll() {
+			repo.deleteAll();
 			return true;
-			
+		
 		}
 }
 
