@@ -26,6 +26,10 @@ https://taliawat.atlassian.net/jira/software/projects/SDFP/issues/SDFP-6?filter=
 
 Risk Assessment
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/97037646/160150214-bb3a8031-bbd6-4275-b5fb-a868c3b17ac7.png">                          
-                                  
+
+
+
+I realised the coverage report was showing later so please find below.
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/97037646/160145599-84fe3ddf-6cdf-4357-bc15-0b430c6046d7.png">
                                   
                                   
